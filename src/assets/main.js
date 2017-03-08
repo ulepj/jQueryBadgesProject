@@ -4,17 +4,17 @@ $(function() {
     url: 'https://www.codeschool.com/users/jerome_22.json',
     dataType: 'jsonp',
     success: function(response) {
-      console.log('response', response.courses.completed);
+      addCourses(response.courses.completed);
     }
   });
+
   function addCourses(courses){
-  // your code will go here
 
     var $badges = $('#badges');
 
     courses.forEach(function(course) {
 
-      var $course = ('<div/>'),{
+      var $course = $('<div/>', {
         'class': 'course'
       }).appendTo($badges);
 
